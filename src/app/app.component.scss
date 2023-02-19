@@ -9,11 +9,38 @@
   }
 
   &__name {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     pointer-events: none;
   }
 
   .example-spacer {
     flex: 1 1 auto;
+  }
+
+  button {
+    padding: 2px 10px;
+    font-size: 1.2rem;
+  }
+}
+
+.router-outlet {
+  margin-top: 50px;
+}
+
+//----------------------------------------
+//----------------------------------------
+//----------------------------------------
+//----------------------------------------
+//----------------------------------------
+
+@media only screen and (min-width: 768px) {
+  .nav {
+    &__name {
+      font-size: 2.2rem;
+    }
+
+    button {
+      font-size: 1.4rem;
+    }
   }
 }

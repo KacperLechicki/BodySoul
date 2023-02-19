@@ -1,0 +1,30 @@
+.logo {
+  &-img {
+    margin-bottom: 20px;
+    max-height: 70px;
+    border-radius: 5px;
+  }
+}
+
+.col-md-6 {
+  display: flex;
+  justify-content: space-around;
+  color: rgb(229, 229, 229);
+
+  mat-form-field {
+    width: 90%;
+
+    mat-label {
+      color: rgb(229, 229, 229);
+    }
+
+    input {
+      color: rgb(229, 229, 229);
+      border: 1px solid rgb(229, 229, 229);
+
+      &::placeholder {
+        color: rgba(229, 229, 229, 0.225);
+      }
+    }
+  }
+}
