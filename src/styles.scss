@@ -4,13 +4,14 @@
 @include mat.core();
 
 $my-primary: mat.define-palette(mat.$indigo-palette, 200, 600, 900);
+$my-accent: mat.define-palette(mat.$indigo-palette, 900);
 $my-warn: mat.define-palette(mat.$green-palette, A200, A100, A400);
 
 $my-theme: mat.define-light-theme(
   (
     color: (
       primary: $my-primary,
-      accent: $my-primary,
+      accent: $my-accent,
       warn: $my-warn,
     ),
     typography: mat.define-typography-config(),
@@ -36,7 +37,8 @@ html {
 
 body {
   min-height: 100%;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-size: 1.6rem;
+  color: rgb(229, 229, 229);
   background-image: linear-gradient(70deg, #3d405b, rgb(62, 65, 92));
 }

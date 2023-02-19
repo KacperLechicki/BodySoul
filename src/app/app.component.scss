@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-right: 10px;
+    max-height: 30px;
+    border-radius: 5px;
+  }
+
+  &__name {
+    font-size: 2.2rem;
+    pointer-events: none;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+}
