@@ -51,15 +51,18 @@
       </div>
       <div class="col-md-6 col-radio">
         <div class="choice-radio">
-          <label id="example-radio-group-label">Do You require trainer?</label>
-          <mat-radio-group class="example-radio-group">
-            <mat-radio-button class="example-radio-button" *ngFor="let trainerOptions of ['Yes', 'No']"
-              [value]="trainerOptions">
-              {{trainerOptions}}
-            </mat-radio-button>
-          </mat-radio-group>
+          <div class="choice-radio-column">
+            <label id="example-radio-group-label">Do You require trainer?</label>
+            <mat-radio-group class="example-radio-group">
+              <mat-radio-button class="example-radio-button" *ngFor="let trainerOptions of ['Yes', 'No']"
+                [value]="trainerOptions" color="primary">
+                {{trainerOptions}}
+              </mat-radio-button>
+            </mat-radio-group>
+            <p>Selected option is:</p>
+          </div>
+          <mat-icon matSuffix>accessibility</mat-icon>
         </div>
-        <p>Selected option is:</p>
       </div>
     </div>
   </form>
