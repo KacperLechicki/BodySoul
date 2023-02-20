@@ -42,36 +42,40 @@
       }
     }
   }
+}
 
-  .col-radio {
+.col-radio {
+  display: flex;
+  justify-content: center;
+  height: 85px;
+
+  .choice-radio {
     display: flex;
-    justify-content: center;
-    height: 85px;
+    justify-content: space-between;
+    margin-top: 18px;
+    padding: 10px 11px 0 16px;
+    width: 90%;
+    border: 1px solid rgba(0, 0, 0, 0.38);
+    border-radius: 5px;
 
-    .choice-radio {
+    &:hover {
+      border-color: black;
+    }
+
+    .choice-radio-column {
       display: flex;
-      justify-content: space-between;
-      margin-top: 18px;
-      padding: 10px 11px 0 16px;
-      width: 90%;
-      border: 1px solid rgba(0, 0, 0, 0.38);
-      border-radius: 5px;
+      flex-direction: column;
+      color: rgba(229, 229, 229, 0.895);
 
-      &:hover {
-        border-color: black;
-      }
-
-      .choice-radio-column {
-        display: flex;
-        flex-direction: column;
-        color: rgb(229, 229, 229);
-
-        p {
-          color: rgb(229, 229, 229, 0.525);
-        }
+      p {
+        color: rgb(229, 229, 229, 0.525);
       }
     }
   }
+}
+
+.col-select {
+  margin-top: 47px;
 }
 
 //----------------------------------------------------------------
@@ -80,10 +84,20 @@
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 
+@media only screen and (min-width: 300px) and (max-width: 375px) {
+  .col-radio {
+    margin-bottom: 40px;
+  }
+}
+
 @media only screen and (max-width: 750px) {
   .col-md-6 {
     .form-field-underRadio {
       margin-top: 48px;
     }
+  }
+
+  .col-radio-gender {
+    margin-top: 47px;
   }
 }

@@ -43,10 +43,22 @@ body {
   background-image: linear-gradient(70deg, #3d405b, rgb(62, 65, 92));
 }
 
-.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle {
+.mat-mdc-radio-button
+  .mdc-radio
+  .mdc-radio__native-control:enabled:not(:checked)
+  + .mdc-radio__background
+  .mdc-radio__outer-circle {
   border-color: rgb(229, 229, 229) !important;
 }
 
 .mdc-form-field > label {
   color: rgb(229, 229, 229) !important;
+}
+
+.mdc-form-field {
+  margin-right: 10px;
+}
+
+.mat-mdc-select-value {
+  color: rgb(229, 229, 229);
 }

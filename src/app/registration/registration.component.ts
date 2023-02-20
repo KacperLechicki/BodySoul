@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent {
-  favoriteSeason: string;
-  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
+  public packages = ['Monthly', 'Quarterly', 'Annual'];
+  public genders = ['Male', 'Female', 'Other'];
 }

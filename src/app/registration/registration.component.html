@@ -64,6 +64,32 @@
           <mat-icon matSuffix>accessibility</mat-icon>
         </div>
       </div>
+      <div class="col-md-6 col-radio col-radio-gender">
+        <div class="choice-radio">
+          <div class="choice-radio-column">
+            <label id="example-radio-group-label">Gender</label>
+            <mat-radio-group class="example-radio-group">
+              <mat-radio-button class="example-radio-button" *ngFor="let gender of genders" [value]="gender"
+                color="primary">
+                {{gender}}
+              </mat-radio-button>
+            </mat-radio-group>
+            <p>Selected option is:</p>
+          </div>
+          <mat-icon matSuffix>people
+          </mat-icon>
+        </div>
+      </div>
+      <div class="col-md-6 col-radio col-select">
+        <mat-form-field appearance="outline">
+          <mat-label>Package</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let package of packages" [value]="package">
+              {{package}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
     </div>
   </form>
 </div>
