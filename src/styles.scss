@@ -30,13 +30,13 @@ $my-theme: mat.define-light-theme(
 }
 
 html {
-  height: 100%;
+  min-height: 100vh;
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100%;
+  min-height: 100vh;
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   color: rgb(229, 229, 229);
@@ -61,4 +61,8 @@ body {
 
 .mat-mdc-select-value {
   color: rgb(229, 229, 229);
+}
+
+.mat-mdc-icon-button {
+  color: rgb(229, 229, 229) !important;
 }
