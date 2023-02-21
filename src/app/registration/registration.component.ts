@@ -37,8 +37,8 @@ export class RegistrationComponent {
       phone: ['', Validators.required],
       weight: ['', Validators.required],
       height: ['', Validators.required],
-      bmi: ['', Validators.required],
-      bmiResult: ['', Validators.required],
+      // bmi: ['', Validators.required],
+      // bmiResult: ['', Validators.required],
       gender: ['', Validators.required],
       requireTrainer: ['', Validators.required],
       package: ['', Validators.required],
@@ -57,13 +57,43 @@ export class RegistrationComponent {
 
       if (this.registerForm.controls['requireTrainer'].value == '') {
         this.choiceTrainer.nativeElement.style.border = '1px solid red';
+      } else {
+        this.choiceTrainer.nativeElement.style.border =
+          '1px solid rgba(0, 0, 0, 0.38)';
       }
       if (this.registerForm.controls['gender'].value == '') {
         this.choiceGender.nativeElement.style.border = '1px solid red';
+      } else {
+        this.choiceGender.nativeElement.style.border =
+          '1px solid rgba(0, 0, 0, 0.38)';
       }
       if (this.registerForm.controls['haveGymBefore'].value == '') {
         this.choiceGym.nativeElement.style.border = '1px solid red';
+      } else {
+        this.choiceGym.nativeElement.style.border =
+          '1px solid rgba(0, 0, 0, 0.38)';
       }
+    }
+  }
+
+  checkGenderValidation(): void {
+    if (this.registerForm.controls['gender'].value !== '') {
+      this.choiceGender.nativeElement.style.border =
+        '1px solid rgba(0, 0, 0, 0.38)';
+    }
+  }
+
+  checkTrainerValidation(): void {
+    if (this.registerForm.controls['requireTrainer'].value !== '') {
+      this.choiceTrainer.nativeElement.style.border =
+        '1px solid rgba(0, 0, 0, 0.38)';
+    }
+  }
+
+  checkGymValidation(): void {
+    if (this.registerForm.controls['haveGymBefore'].value !== '') {
+      this.choiceGym.nativeElement.style.border =
+        '1px solid rgba(0, 0, 0, 0.38)';
     }
   }
 }

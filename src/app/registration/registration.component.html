@@ -59,7 +59,7 @@
         <div class="choice-radio" #choiceTrainer>
           <div class="choice-radio-column">
             <label id="example-radio-group-label">Do You require trainer?<span class="required">*</span></label>
-            <mat-radio-group formControlName="requireTrainer" class="example-radio-group">
+            <mat-radio-group (change)="checkTrainerValidation()" formControlName="requireTrainer" class="example-radio-group">
               <mat-radio-button class="example-radio-button" *ngFor="let trainerOptions of ['Yes', 'No']"
                 [value]="trainerOptions" color="primary">
                 {{trainerOptions}}
@@ -74,9 +74,9 @@
         <div class="choice-radio choice-radio-gender" #choiceGender>
           <div class="choice-radio-column">
             <label id="example-radio-group-label">Gender<span class="required">*</span></label>
-            <mat-radio-group formControlName="gender" class="example-radio-group">
-              <mat-radio-button class="example-radio-button" *ngFor="let gender of genders" [value]="gender"
-                color="primary">
+            <mat-radio-group (change)="checkGenderValidation()" formControlName="gender" class="example-radio-group">
+              <mat-radio-button class="example-radio-button"
+                *ngFor="let gender of genders" [value]="gender" color="primary">
                 {{gender}}
               </mat-radio-button>
             </mat-radio-group>
@@ -114,7 +114,7 @@
         <div class="choice-radio choice-radio-gym" #choiceGym>
           <div class="choice-radio-column">
             <label id="example-radio-group-label">Have You Gym before?<span class="required">*</span></label>
-            <mat-radio-group formControlName="haveGymBefore" class="example-radio-group">
+            <mat-radio-group (change)="checkGymValidation()" formControlName="haveGymBefore" class="example-radio-group">
               <mat-radio-button class="example-radio-button" *ngFor="let gymOptions of ['Yes', 'No']"
                 [value]="gymOptions" color="primary">
                 {{gymOptions}}
