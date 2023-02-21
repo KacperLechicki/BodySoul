@@ -43,6 +43,10 @@ body {
   background-image: linear-gradient(70deg, #3d405b, rgb(62, 65, 92));
 }
 
+svg {
+  color: rgb(229, 229, 229) !important;
+}
+
 .mat-mdc-radio-button
   .mdc-radio
   .mdc-radio__native-control:enabled:not(:checked)
@@ -65,4 +69,8 @@ body {
 
 .mat-mdc-icon-button {
   color: rgb(229, 229, 229) !important;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: tomato !important;
 }

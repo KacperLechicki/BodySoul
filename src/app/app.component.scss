@@ -1,6 +1,8 @@
 mat-toolbar {
   position: fixed;
   top: 0;
+  opacity: 1;
+  z-index: 100;
 
   .nav {
     display: flex;
@@ -22,7 +24,7 @@ mat-toolbar {
     }
 
     button {
-      padding: 2px 10px;
+      padding: 4px 12px;
       font-size: 1.2rem;
     }
   }

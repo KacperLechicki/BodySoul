@@ -8,51 +8,57 @@
 
 .registation-form {
   display: flex;
+  justify-content: center;
 
-  .col-md-6 {
+  .row {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-left: 0;
-    color: rgb(229, 229, 229);
 
-    mat-form-field {
-      margin-bottom: 7px;
-      width: 90%;
+    .col-md-6 {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 22px;
+      min-width: 350px;
+      max-height: 150px;
+      color: rgb(229, 229, 229);
 
-      mat-label {
-        color: rgb(229, 229, 229);
-      }
+      mat-form-field {
+        width: 90%;
 
-      input {
-        color: rgb(229, 229, 229);
-        border: 1px solid rgb(229, 229, 229);
+        mat-label {
+          color: rgb(229, 229, 229);
+        }
 
-        &::placeholder {
-          color: rgba(229, 229, 229, 0.225);
+        input {
+          color: rgb(229, 229, 229);
+          border: 1px solid rgb(229, 229, 229);
+
+          &::placeholder {
+            color: rgba(229, 229, 229, 0.225);
+          }
+        }
+
+        mat-icon {
+          display: flex;
+          align-items: center;
+        }
+
+        mat-hint {
+          font-size: 1rem;
+          color: rgb(229, 229, 229, 0.525);
         }
       }
-
-      mat-icon {
-        display: flex;
-        align-items: center;
-      }
-
-      mat-hint {
-        font-size: 1rem;
-        color: rgb(229, 229, 229, 0.525);
-      }
     }
-  }
 
-  .col-md-12 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .col-md-12 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    button {
-      margin-top: 47px;
-      width: 10%;
+      button {
+        width: 20%;
+      }
     }
   }
 }
@@ -60,12 +66,10 @@
 .col-radio {
   display: flex;
   justify-content: center;
-  height: 85px;
 
   .choice-radio {
     display: flex;
     justify-content: space-between;
-    margin-top: 18px;
     padding: 10px 11px 0 16px;
     width: 90%;
     border: 1px solid rgba(0, 0, 0, 0.38);
@@ -83,40 +87,11 @@
       p {
         color: rgb(229, 229, 229, 0.525);
       }
+
+      .required {
+        margin-left: 2px;
+        color: tomato;
+      }
     }
-  }
-}
-
-.col-select {
-  margin-top: 47px;
-}
-
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-
-@media only screen and (min-width: 300px) and (max-width: 768px) {
-  .col-radio {
-    margin-bottom: 85px;
-  }
-
-  .col-select {
-    margin-top: 0;
-  }
-}
-
-@media only screen and (min-width: 365px) {
-  .col-md-6 {
-    .form-field-underRadio {
-      margin-top: 40px;
-    }
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-  .col-md-6 {
-    margin-bottom: 20px;
   }
 }
