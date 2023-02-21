@@ -19,7 +19,7 @@
       align-items: flex-start;
       justify-content: center;
       margin-bottom: 22px;
-      min-width: 350px;
+      width: clamp(250px, 400px, 80vw);
       max-height: 150px;
       color: rgb(229, 229, 229);
 
@@ -93,5 +93,11 @@
         color: tomato;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .col-md-6 {
+    max-width: 300px;
   }
 }
