@@ -23,6 +23,8 @@ export class RegistrationComponent {
   @ViewChild('choiceGender') choiceGender: ElementRef<HTMLDivElement>;
   @ViewChild('choiceGym') choiceGym: ElementRef<HTMLDivElement>;
 
+  heightPlaceholder: string = 'Enter your weight first!';
+
   public registerForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
@@ -47,9 +49,23 @@ export class RegistrationComponent {
       enquiryDate: ['', Validators.required],
     });
 
-    this.registerForm.controls['height'].valueChanges.subscribe(res => {
+    this.registerForm.controls['height'].valueChanges.subscribe((res) => {
       this.calculateBMI(res);
-    })
+
+      if(res === null) {
+        this.registerForm.controls['bmiResult'].patchValue('');
+      }
+    });
+
+    this.registerForm.controls['weight'].valueChanges.subscribe((res) => {
+      if (res !== null) {
+        this.heightPlaceholder = 'Height';
+      } else {
+        this.heightPlaceholder = 'Enter your weight first!';
+        this.registerForm.controls['bmiResult'].patchValue('');
+      }
+      console.log(this.registerForm.controls['weight'].value);
+    });
   }
 
   onSubmit(): void {

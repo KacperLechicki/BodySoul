@@ -49,7 +49,7 @@
         <mat-form-field appearance="outline">
           <mat-label>Height</mat-label>
           <input [readonly]="!this.registerForm.value?.weight" formControlName="height" type="number" matInput
-            placeholder="Height">
+            [placeholder]="heightPlaceholder">
           <mat-icon matSuffix><i class="fa fa-text-height" aria-hidden="true"></i></mat-icon>
           <mat-hint>Enter your height in meters.</mat-hint>
         </mat-form-field>
