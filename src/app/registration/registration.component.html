@@ -48,9 +48,28 @@
       <div class="col-md-6">
         <mat-form-field appearance="outline">
           <mat-label>Height</mat-label>
-          <input formControlName="height" type="number" matInput placeholder="Height">
+          <input [readonly]="!this.registerForm.value?.weight" formControlName="height" type="number" matInput
+            placeholder="Height">
           <mat-icon matSuffix><i class="fa fa-text-height" aria-hidden="true"></i></mat-icon>
           <mat-hint>Enter your height in meters.</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>BMI</mat-label>
+          <input readonly formControlName="bmi" type="number" matInput placeholder="BMI">
+          <mat-icon matSuffix><i class="fa fa-sort-numeric-desc" aria-hidden="true"></i></mat-icon>
+          <mat-hint>Calculated automatically</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>BMI Result</mat-label>
+          <input readonly formControlName="bmiResult" type="text" matInput placeholder="BMI Result">
+          <mat-icon matSuffix><i class="fa fa-check" aria-hidden="true"></i></mat-icon>
+          <mat-hint>Calculated automatically</mat-hint>
         </mat-form-field>
       </div>
     </div>
@@ -59,7 +78,8 @@
         <div class="choice-radio" #choiceTrainer>
           <div class="choice-radio-column">
             <label id="example-radio-group-label">Do You require trainer?<span class="required">*</span></label>
-            <mat-radio-group (change)="checkTrainerValidation()" formControlName="requireTrainer" class="example-radio-group">
+            <mat-radio-group (change)="checkTrainerValidation()" formControlName="requireTrainer"
+              class="example-radio-group">
               <mat-radio-button class="example-radio-button" *ngFor="let trainerOptions of ['Yes', 'No']"
                 [value]="trainerOptions" color="primary">
                 {{trainerOptions}}
@@ -75,8 +95,8 @@
           <div class="choice-radio-column">
             <label id="example-radio-group-label">Gender<span class="required">*</span></label>
             <mat-radio-group (change)="checkGenderValidation()" formControlName="gender" class="example-radio-group">
-              <mat-radio-button class="example-radio-button"
-                *ngFor="let gender of genders" [value]="gender" color="primary">
+              <mat-radio-button class="example-radio-button" *ngFor="let gender of genders" [value]="gender"
+                color="primary">
                 {{gender}}
               </mat-radio-button>
             </mat-radio-group>
@@ -88,7 +108,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 col-select">
+      <div class="col-md-6 col-select col-select-package">
         <mat-form-field appearance="outline">
           <mat-label>Package</mat-label>
           <mat-select formControlName="package">
@@ -114,13 +134,14 @@
         <div class="choice-radio choice-radio-gym" #choiceGym>
           <div class="choice-radio-column">
             <label id="example-radio-group-label">Have You Gym before?<span class="required">*</span></label>
-            <mat-radio-group (change)="checkGymValidation()" formControlName="haveGymBefore" class="example-radio-group">
+            <mat-radio-group (change)="checkGymValidation()" formControlName="haveGymBefore"
+              class="example-radio-group">
               <mat-radio-button class="example-radio-button" *ngFor="let gymOptions of ['Yes', 'No']"
                 [value]="gymOptions" color="primary">
                 {{gymOptions}}
               </mat-radio-button>
             </mat-radio-group>
-            <p>Selected option is:</p>
+            <p>Selected option is: </p>
           </div>
           <mat-icon matSuffix>accessibility
           </mat-icon>

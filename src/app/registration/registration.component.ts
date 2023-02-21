@@ -37,8 +37,8 @@ export class RegistrationComponent {
       phone: ['', Validators.required],
       weight: ['', Validators.required],
       height: ['', Validators.required],
-      // bmi: ['', Validators.required],
-      // bmiResult: ['', Validators.required],
+      bmi: [''],
+      bmiResult: [''],
       gender: ['', Validators.required],
       requireTrainer: ['', Validators.required],
       package: ['', Validators.required],
@@ -46,6 +46,10 @@ export class RegistrationComponent {
       haveGymBefore: ['', Validators.required],
       enquiryDate: ['', Validators.required],
     });
+
+    this.registerForm.controls['height'].valueChanges.subscribe(res => {
+      this.calculateBMI(res);
+    })
   }
 
   onSubmit(): void {
@@ -94,6 +98,30 @@ export class RegistrationComponent {
     if (this.registerForm.controls['haveGymBefore'].value !== '') {
       this.choiceGym.nativeElement.style.border =
         '1px solid rgba(0, 0, 0, 0.38)';
+    }
+  }
+
+  calculateBMI(heightValue: number): void {
+    const weight = this.registerForm.value.weight;
+    const height = heightValue;
+    const bmi = weight / (height * height);
+
+    this.registerForm.controls['bmi'].patchValue(bmi);
+
+    switch (true) {
+      case bmi < 18.5:
+        this.registerForm.controls['bmiResult'].patchValue('Underweight');
+        break;
+      case bmi >= 18.5 && bmi < 25:
+        this.registerForm.controls['bmiResult'].patchValue('Normal');
+        break;
+      case bmi >= 25 && bmi < 30:
+        this.registerForm.controls['bmiResult'].patchValue('Overweight');
+        break;
+
+      default:
+        this.registerForm.controls['bmiResult'].patchValue('Obese');
+        break;
     }
   }
 }

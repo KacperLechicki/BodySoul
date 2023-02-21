@@ -18,10 +18,18 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      margin-bottom: 22px;
+      margin-bottom: 12px;
       width: clamp(250px, 400px, 80vw);
       max-height: 150px;
       color: rgb(229, 229, 229);
+
+      &.col-radio {
+        margin-bottom: 30px;
+
+        &.col-select {
+          margin-bottom: 12px;
+        }
+      }
 
       mat-form-field {
         width: 90%;
@@ -92,6 +100,14 @@
         margin-left: 2px;
         color: tomato;
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 360px) {
+  .col-md-6 {
+    &.col-select-package {
+      margin-top: 35px;
     }
   }
 }
