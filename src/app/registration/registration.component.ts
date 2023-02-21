@@ -1,12 +1,22 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgToastService } from 'ng-angular-popup';
+import { Subscription } from 'rxjs';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss'],
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit, OnDestroy {
   public packages: string[] = ['Monthly', 'Quarterly', 'Annual'];
   public genders: string[] = ['Male', 'Female', 'Other'];
 
@@ -25,9 +35,17 @@ export class RegistrationComponent {
 
   heightPlaceholder: string = 'Enter your weight first!';
 
+  heightChangesSub: Subscription;
+  weightChangesSub: Subscription;
+  postSub: Subscription;
+
   public registerForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private api: ApiService,
+    private toastService: NgToastService
+  ) {}
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -49,15 +67,19 @@ export class RegistrationComponent {
       enquiryDate: ['', Validators.required],
     });
 
-    this.registerForm.controls['height'].valueChanges.subscribe((res) => {
+    this.heightChangesSub = this.registerForm.controls[
+      'height'
+    ].valueChanges.subscribe((res) => {
       this.calculateBMI(res);
 
-      if(res === null) {
+      if (res === null) {
         this.registerForm.controls['bmiResult'].patchValue('');
       }
     });
 
-    this.registerForm.controls['weight'].valueChanges.subscribe((res) => {
+    this.weightChangesSub = this.registerForm.controls[
+      'weight'
+    ].valueChanges.subscribe((res) => {
       if (res !== null) {
         this.heightPlaceholder = 'Height';
       } else {
@@ -70,7 +92,15 @@ export class RegistrationComponent {
 
   onSubmit(): void {
     if (this.registerForm.valid) {
-      console.log(this.registerForm.value);
+      this.postSub = this.api
+        .postRegistration(this.registerForm.value)
+        .subscribe((res) => {
+          this.toastService.success({
+            detail: 'Success',
+            summary: 'Enquiry added',
+            duration: 3000,
+          });
+        });
       this.registerForm.reset();
     } else {
       this.registerForm.markAllAsTouched();
@@ -139,5 +169,13 @@ export class RegistrationComponent {
         this.registerForm.controls['bmiResult'].patchValue('Obese');
         break;
     }
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.heightChangesSub.unsubscribe();
+    this.weightChangesSub.unsubscribe();
+    this.postSub.unsubscribe();
   }
 }
