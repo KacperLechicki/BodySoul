@@ -56,7 +56,7 @@
     </div>
     <div class="row">
       <div class="col-md-6 col-radio">
-        <div class="choice-radio">
+        <div class="choice-radio" #choiceTrainer>
           <div class="choice-radio-column">
             <label id="example-radio-group-label">Do You require trainer?<span class="required">*</span></label>
             <mat-radio-group formControlName="requireTrainer" class="example-radio-group">
@@ -71,7 +71,7 @@
         </div>
       </div>
       <div class="col-md-6 col-radio col-radio-gender">
-        <div class="choice-radio choice-radio-gender">
+        <div class="choice-radio choice-radio-gender" #choiceGender>
           <div class="choice-radio-column">
             <label id="example-radio-group-label">Gender<span class="required">*</span></label>
             <mat-radio-group formControlName="gender" class="example-radio-group">
@@ -111,7 +111,7 @@
     </div>
     <div class="row">
       <div class="col-md-6 col-radio">
-        <div class="choice-radio choice-radio-gym">
+        <div class="choice-radio choice-radio-gym" #choiceGym>
           <div class="choice-radio-column">
             <label id="example-radio-group-label">Have You Gym before?<span class="required">*</span></label>
             <mat-radio-group formControlName="haveGymBefore" class="example-radio-group">
@@ -138,7 +138,7 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <button mat-flat-button type="button" color="warn" (click)="onSubmit()">Submit</button>
+        <button mat-flat-button type="button" color="accent" (click)="onSubmit()">Submit</button>
       </div>
     </div>
   </form>

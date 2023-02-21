@@ -4,8 +4,8 @@
 @include mat.core();
 
 $my-primary: mat.define-palette(mat.$indigo-palette, 200, 600, 900);
-$my-accent: mat.define-palette(mat.$indigo-palette, 800);
-$my-warn: mat.define-palette(mat.$green-palette, A200, A100, A400);
+$my-accent: mat.define-palette(mat.$green-palette, A200, A400);
+$my-warn: mat.define-palette(mat.$red-palette, 500, 700, 800);
 
 $my-theme: mat.define-light-theme(
   (

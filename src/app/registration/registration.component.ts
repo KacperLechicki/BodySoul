@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -18,6 +18,10 @@ export class RegistrationComponent {
     'Sugar Craving Body',
     'Fitness',
   ];
+
+  @ViewChild('choiceTrainer') choiceTrainer: ElementRef<HTMLDivElement>;
+  @ViewChild('choiceGender') choiceGender: ElementRef<HTMLDivElement>;
+  @ViewChild('choiceGym') choiceGym: ElementRef<HTMLDivElement>;
 
   public registerForm: FormGroup;
 
@@ -48,6 +52,18 @@ export class RegistrationComponent {
     if (this.registerForm.valid) {
       console.log(this.registerForm.value);
       this.registerForm.reset();
+    } else {
+      this.registerForm.markAllAsTouched();
+
+      if (this.registerForm.controls['requireTrainer'].value == '') {
+        this.choiceTrainer.nativeElement.style.border = '1px solid red';
+      }
+      if (this.registerForm.controls['gender'].value == '') {
+        this.choiceGender.nativeElement.style.border = '1px solid red';
+      }
+      if (this.registerForm.controls['haveGymBefore'].value == '') {
+        this.choiceGym.nativeElement.style.border = '1px solid red';
+      }
     }
   }
 }
