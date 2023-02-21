@@ -65,7 +65,7 @@
         </div>
       </div>
       <div class="col-md-6 col-radio col-radio-gender">
-        <div class="choice-radio">
+        <div class="choice-radio choice-radio-gender">
           <div class="choice-radio-column">
             <label id="example-radio-group-label">Gender</label>
             <mat-radio-group class="example-radio-group">
@@ -86,6 +86,16 @@
           <mat-select>
             <mat-option *ngFor="let package of packages" [value]="package">
               {{package}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 col-radio col-select">
+        <mat-form-field appearance="outline">
+          <mat-label>Important to you:</mat-label>
+          <mat-select multiple>
+            <mat-option *ngFor="let important of importantList" [value]="important">
+              {{important}}
             </mat-option>
           </mat-select>
         </mat-form-field>
