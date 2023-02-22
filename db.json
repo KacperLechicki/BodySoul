@@ -42,14 +42,14 @@
       "id": 2
     },
     {
-      "firstName": "Test2",
-      "lastName": "Test2",
+      "firstName": "Test5",
+      "lastName": "Test5",
       "email": "gmail2@gmail.com",
       "phone": 555555555,
-      "weight": 90,
-      "height": 1.8,
-      "bmi": 27.777777777777775,
-      "bmiResult": "Overweight",
+      "weight": 50,
+      "height": 1.9,
+      "bmi": 13.850415512465375,
+      "bmiResult": "Underweight",
       "gender": "Male",
       "requireTrainer": "Yes",
       "package": "Quarterly",
@@ -61,6 +61,27 @@
       "haveGymBefore": "No",
       "enquiryDate": "2023-03-31T22:00:00.000Z",
       "id": 3
+    },
+    {
+      "firstName": "Test3",
+      "lastName": "Test3",
+      "email": "gmail2@gmail.com",
+      "phone": 555555555,
+      "weight": 90,
+      "height": 1.6,
+      "bmi": 35.15624999999999,
+      "bmiResult": "Obese",
+      "gender": "Male",
+      "requireTrainer": "Yes",
+      "package": "Quarterly",
+      "important": [
+        "Healthier Digestive System",
+        "Sugar Craving Body",
+        "Fitness"
+      ],
+      "haveGymBefore": "No",
+      "enquiryDate": "2023-03-31T22:00:00.000Z",
+      "id": 4
     }
   ]
 }

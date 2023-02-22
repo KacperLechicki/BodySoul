@@ -7,7 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { Subscription } from 'rxjs';
 import { User } from '../models/user.model';
@@ -45,11 +45,14 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   public registerForm: FormGroup;
   public userIDUpdate: number;
 
+  public isUpdateActive: boolean = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
     private toastService: NgToastService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -97,6 +100,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     this.updateUserSub = this.activatedRoute.params.subscribe((res) => {
       this.userIDUpdate = res['id'];
       this.api.getRegisteredUserId(this.userIDUpdate).subscribe((res) => {
+        this.isUpdateActive = true;
         this.fillFormToUpdate(res);
       });
     });
@@ -136,6 +140,20 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           '1px solid rgba(0, 0, 0, 0.38)';
       }
     }
+  }
+
+  onUpdate(): void {
+    this.api
+      .updateRegistredUser(this.registerForm.value, this.userIDUpdate)
+      .subscribe((res) => {
+        this.toastService.success({
+          detail: 'Success',
+          summary: 'Enquiry updated',
+          duration: 3000,
+        });
+        this.registerForm.reset();
+        this.router.navigate(['/list']);
+      });
   }
 
   checkGenderValidation(): void {
