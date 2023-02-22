@@ -40,6 +40,27 @@
       "haveGymBefore": "Yes",
       "enquiryDate": "2023-03-14T23:00:00.000Z",
       "id": 2
+    },
+    {
+      "firstName": "Test2",
+      "lastName": "Test2",
+      "email": "gmail2@gmail.com",
+      "phone": 555555555,
+      "weight": 90,
+      "height": 1.8,
+      "bmi": 27.777777777777775,
+      "bmiResult": "Overweight",
+      "gender": "Male",
+      "requireTrainer": "Yes",
+      "package": "Quarterly",
+      "important": [
+        "Healthier Digestive System",
+        "Sugar Craving Body",
+        "Fitness"
+      ],
+      "haveGymBefore": "No",
+      "enquiryDate": "2023-03-31T22:00:00.000Z",
+      "id": 3
     }
   ]
 }

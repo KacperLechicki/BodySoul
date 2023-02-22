@@ -30,6 +30,7 @@ $my-theme: mat.define-light-theme(
 }
 
 html {
+  min-width: 100vw;
   min-height: 100vh;
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -73,4 +74,18 @@ svg {
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
   color: tomato !important;
+}
+
+.filter {
+  .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+    color: black !important;
+  }
+}
+
+.mat-mdc-text-field-wrapper {
+  border-radius: 5px !important;
+}
+
+.mat-mdc-paginator .mat-mdc-select-value {
+  color: black !important;
 }
