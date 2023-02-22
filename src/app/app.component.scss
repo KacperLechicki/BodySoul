@@ -10,6 +10,8 @@ mat-toolbar {
     align-items: center;
 
     .logoRouter {
+      display: flex;
+      align-items: center;
       cursor: pointer;
 
       img {
@@ -19,7 +21,11 @@ mat-toolbar {
       }
 
       .name {
+        margin-bottom: 0;
         font-size: 2rem;
+        color: transparent;
+        background-image: linear-gradient(to right, #3d405b, #575e7d);
+        background-clip: text;
         pointer-events: none;
       }
     }
@@ -47,8 +53,10 @@ mat-toolbar {
 
 @media only screen and (min-width: 768px) {
   .nav {
-    &__name {
-      font-size: 2.2rem;
+    .logoRouter {
+      .name {
+        font-size: 2.4rem;
+      }
     }
 
     button {

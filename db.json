@@ -40,6 +40,27 @@
       "haveGymBefore": "Yes",
       "enquiryDate": "2023-02-27T23:00:00.000Z",
       "id": 4
+    },
+    {
+      "firstName": "Jan",
+      "lastName": "Nowak",
+      "email": "nowak@gmail.com",
+      "phone": "543243432",
+      "weight": 68,
+      "height": 1.68,
+      "bmi": 24.092970521541954,
+      "bmiResult": "Normal",
+      "gender": "Male",
+      "requireTrainer": "Yes",
+      "package": "Annual",
+      "important": [
+        "Energy and Endurance",
+        "Building Lean Muscle",
+        "Fitness"
+      ],
+      "haveGymBefore": "No",
+      "enquiryDate": "2023-03-04T23:00:00.000Z",
+      "id": 5
     }
   ]
 }
