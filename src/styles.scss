@@ -30,8 +30,8 @@ $my-theme: mat.define-light-theme(
 }
 
 html {
-  min-width: 100vw;
   min-height: 100vh;
+  min-width: 100vw;
   font-size: 62.5%;
   scroll-behavior: smooth;
 }

@@ -22,10 +22,10 @@
       "id": 1
     },
     {
-      "firstName": "Jan",
-      "lastName": "Kowalski",
-      "email": "kowalski@gmail.com",
-      "phone": 455333211,
+      "firstName": "asdsadnajkndknakdnjakndjkasndjasdadasdna",
+      "lastName": "Kowalskiasdsdadadasdadadakjsndandjkandks",
+      "email": "kowalski@gmail.comasddasdadbahjsdbahdbja",
+      "phone": "32423432424323",
       "weight": 82,
       "height": 1.78,
       "bmi": 25.88057063502083,
@@ -33,26 +33,6 @@
       "gender": "Male",
       "requireTrainer": "Yes",
       "package": "Annual",
-      "important": [
-        "Sugar Craving Body",
-        "Fitness"
-      ],
-      "haveGymBefore": "No",
-      "enquiryDate": "2023-02-25T23:00:00.000Z",
-      "id": 2
-    },
-    {
-      "firstName": "Test",
-      "lastName": "Test",
-      "email": "test@gmail.com",
-      "phone": 333444555,
-      "weight": 65,
-      "height": 1.67,
-      "bmi": 23.306680053067517,
-      "bmiResult": "Normal",
-      "gender": "Female",
-      "requireTrainer": "No",
-      "package": "Monthly",
       "important": [
         "Toxic Fat Reduction",
         "Energy and Endurance",
@@ -62,8 +42,28 @@
         "Fitness"
       ],
       "haveGymBefore": "No",
-      "enquiryDate": "2023-02-28T23:00:00.000Z",
-      "id": 3
+      "enquiryDate": "2023-02-22T23:00:00.000Z",
+      "id": 2
+    },
+    {
+      "firstName": "Bartosz",
+      "lastName": "Kunkel",
+      "email": "gmail@gmail.com",
+      "phone": 456738490,
+      "weight": 80,
+      "height": 1.9,
+      "bmi": 22.1606648199446,
+      "bmiResult": "Normal",
+      "gender": "Male",
+      "requireTrainer": "No",
+      "package": "Quarterly",
+      "important": [
+        "Building Lean Muscle",
+        "Healthier Digestive System"
+      ],
+      "haveGymBefore": "Yes",
+      "enquiryDate": "2023-02-27T23:00:00.000Z",
+      "id": 4
     }
   ]
 }

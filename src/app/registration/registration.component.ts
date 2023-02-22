@@ -93,6 +93,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     this.weightChangesSub = this.registerForm.controls[
       'weight'
     ].valueChanges.subscribe((res) => {
+      this.registerForm.controls['height'].reset();
       if (res !== null) {
         this.heightPlaceholder = 'Height';
       } else {
@@ -124,41 +125,49 @@ export class RegistrationComponent implements OnInit, OnDestroy {
       this.registerForm.reset();
       this.router.navigate(['/list']);
     } else {
-      this.registerForm.markAllAsTouched();
-
-      if (this.registerForm.controls['requireTrainer'].value == '') {
-        this.choiceTrainer.nativeElement.style.border = '1px solid red';
-      } else {
-        this.choiceTrainer.nativeElement.style.border =
-          '1px solid rgba(0, 0, 0, 0.38)';
-      }
-      if (this.registerForm.controls['gender'].value == '') {
-        this.choiceGender.nativeElement.style.border = '1px solid red';
-      } else {
-        this.choiceGender.nativeElement.style.border =
-          '1px solid rgba(0, 0, 0, 0.38)';
-      }
-      if (this.registerForm.controls['haveGymBefore'].value == '') {
-        this.choiceGym.nativeElement.style.border = '1px solid red';
-      } else {
-        this.choiceGym.nativeElement.style.border =
-          '1px solid rgba(0, 0, 0, 0.38)';
-      }
+      this.checkCustomInputs();
     }
   }
 
   onUpdate(): void {
-    this.api
-      .updateRegistredUser(this.registerForm.value, this.userIDUpdate)
-      .subscribe((res) => {
-        this.toastService.success({
-          detail: 'Success',
-          summary: 'Enquiry updated',
-          duration: 3000,
+    if (this.registerForm.valid) {
+      this.api
+        .updateRegistredUser(this.registerForm.value, this.userIDUpdate)
+        .subscribe((res) => {
+          this.toastService.success({
+            detail: 'Success',
+            summary: 'Enquiry updated',
+            duration: 3000,
+          });
+          this.registerForm.reset();
+          this.router.navigate(['/list']);
         });
-        this.registerForm.reset();
-        this.router.navigate(['/list']);
-      });
+    } else {
+      this.checkCustomInputs();
+    }
+  }
+
+  checkCustomInputs(): void {
+    this.registerForm.markAllAsTouched();
+
+    if (this.registerForm.controls['requireTrainer'].value == '') {
+      this.choiceTrainer.nativeElement.style.border = '1px solid red';
+    } else {
+      this.choiceTrainer.nativeElement.style.border =
+        '1px solid rgba(0, 0, 0, 0.38)';
+    }
+    if (this.registerForm.controls['gender'].value == '') {
+      this.choiceGender.nativeElement.style.border = '1px solid red';
+    } else {
+      this.choiceGender.nativeElement.style.border =
+        '1px solid rgba(0, 0, 0, 0.38)';
+    }
+    if (this.registerForm.controls['haveGymBefore'].value == '') {
+      this.choiceGym.nativeElement.style.border = '1px solid red';
+    } else {
+      this.choiceGym.nativeElement.style.border =
+        '1px solid rgba(0, 0, 0, 0.38)';
+    }
   }
 
   checkGenderValidation(): void {
