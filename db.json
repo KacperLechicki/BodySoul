@@ -22,30 +22,6 @@
       "id": 1
     },
     {
-      "firstName": "asdsadnajkndknakdnjakndjkasndjasdadasdna",
-      "lastName": "Kowalskiasdsdadadasdadadakjsndandjkandks",
-      "email": "kowalski@gmail.comasddasdadbahjsdbahdbja",
-      "phone": "32423432424323",
-      "weight": 82,
-      "height": 1.78,
-      "bmi": 25.88057063502083,
-      "bmiResult": "Overweight",
-      "gender": "Male",
-      "requireTrainer": "Yes",
-      "package": "Annual",
-      "important": [
-        "Toxic Fat Reduction",
-        "Energy and Endurance",
-        "Building Lean Muscle",
-        "Healthier Digestive System",
-        "Sugar Craving Body",
-        "Fitness"
-      ],
-      "haveGymBefore": "No",
-      "enquiryDate": "2023-02-22T23:00:00.000Z",
-      "id": 2
-    },
-    {
       "firstName": "Bartosz",
       "lastName": "Kunkel",
       "email": "gmail@gmail.com",
