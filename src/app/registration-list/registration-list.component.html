@@ -1,3 +1,6 @@
+<button class="back-button" [routerLink]="['/register']" routerLinkActive="router-link-active" mat-flat-button color="accent"><i
+    class="fa fa-arrow-left" aria-hidden="true"></i>Registration</button>
+
 <mat-form-field class="filter">
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" #input>

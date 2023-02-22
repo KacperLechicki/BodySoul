@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  justify-content: center;
+
+  .example-card {
+    display: block;
+    margin: 0 auto;
+    min-width: 400px;
+    max-width: 80vw;
+  }
+}

@@ -1,1 +1,79 @@
-<p>user-detail works!</p>
+<mat-card *ngIf="userDetail" class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{userDetail.firstName}} {{userDetail.lastName}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <div matLine>
+          Email:
+          <button mat-button>{{userDetail.email}}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Phone:
+          <button mat-button>{{userDetail.phone}}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Weight:
+          <button mat-button>{{userDetail.weight}}kg</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Height:
+          <button mat-button>{{userDetail.height}}m</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          BMI:
+          <button mat-button>{{userDetail.bmiResult}}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Gender:
+          <button mat-button>{{userDetail.gender}}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Require Trainer:
+          <button mat-button>{{userDetail.requireTrainer}}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Package:
+          <button mat-button>{{userDetail.package}}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Goals:
+          <button mat-button><mat-chip-listbox>
+              <ng-container *ngFor="let row of userDetail.important">
+                <mat-chip-option selected>{{row}}</mat-chip-option>
+              </ng-container>
+            </mat-chip-listbox></button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Have Gym Before:
+          <button mat-button>{{userDetail.haveGymBefore}}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Enquiry Date:
+          <button mat-button>{{userDetail.enquiryDate | date: 'dd/MM/YYYY'}}</button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

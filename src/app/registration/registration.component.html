@@ -159,6 +159,8 @@
     </div>
     <div class="row">
       <div class="col-md-12">
+        <button class="cancel-button" [routerLink]="['/list']" routerLinkActive="router-link-active" *ngIf="isUpdateActive" mat-flat-button
+          type="button" color="warn">Cancel</button>
         <button *ngIf="!isUpdateActive" mat-flat-button type="button" color="accent"
           (click)="onSubmit()">Submit</button>
         <button *ngIf="isUpdateActive" mat-flat-button type="button" color="accent" (click)="onUpdate()">Update</button>
