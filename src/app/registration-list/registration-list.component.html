@@ -63,11 +63,11 @@
 
       <!-- Action Column -->
       <ng-container matColumnDef="action">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
+        <th class="action-cell-header" mat-header-cell *matHeaderCellDef mat-sort-header> </th>
         <td class="action-cell" mat-cell *matCellDef="let row">
-          <button class="view">view</button>
-          <button class="edit">edit</button>
-          <button class="delete">delete</button>
+          <button mat-icon-button color="accent" class="view"><i class="fa fa-eye" aria-hidden="true"></i></button>
+          <button mat-icon-button color="primary" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button mat-icon-button color="warn" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
         </td>
       </ng-container>
 

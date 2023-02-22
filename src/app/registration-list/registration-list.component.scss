@@ -17,13 +17,54 @@
       td,
       th {
         min-width: 80px;
-        max-width: 150px;
+        max-width: 200px;
         border-radius: 5px;
         overflow: auto;
       }
 
       .mat-cell {
         padding: 16px;
+      }
+
+      .action-cell-header {
+        position: sticky;
+        right: 0;
+        background-color: #3d405b;
+        border-radius: 0px;
+      }
+
+      .action-cell {
+        position: sticky;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        background-color: #3d405b;
+        border-radius: 0px;
+
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+
+          i {
+            font-size: 2rem;
+          }
+
+          .fa-eye {
+            color: #69f0ae;
+          }
+
+          .fa-pencil {
+            color: #9fa8da;
+          }
+
+          .fa-trash {
+            color: #f44336;
+          }
+        }
       }
     }
 
