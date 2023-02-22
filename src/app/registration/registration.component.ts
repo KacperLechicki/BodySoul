@@ -117,6 +117,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           });
         });
       this.registerForm.reset();
+      this.router.navigate(['/list']);
     } else {
       this.registerForm.markAllAsTouched();
 

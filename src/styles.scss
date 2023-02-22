@@ -91,10 +91,13 @@ svg {
 }
 
 ng-confirm {
+  font-family: "Roboto", sans-serif !important;
+
   .modal1.active {
     height: 200px;
     max-height: 300px;
     padding: 0 16px;
+    color: black;
     background-color: #9fa8da;
 
     .dialog-content {
@@ -102,7 +105,29 @@ ng-confirm {
     }
 
     button {
-      transition: box-shadow 0.3s;
+      color: black !important;
+
+      &:first-of-type {
+        background-color: #69f0ae !important;
+
+        &:hover {
+          box-shadow: none;
+          background-color: #61e0a3 !important;
+        }
+      }
+
+      &:nth-of-type(2) {
+        background-color: #f44336 !important;
+
+        &:hover {
+          box-shadow: none;
+          background-color: #e63e32 !important;
+        }
+      }
     }
   }
+}
+
+lib-ng-toast {
+  font-family: 'Roboto', sans-serif !important;
 }

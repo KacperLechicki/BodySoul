@@ -22,24 +22,44 @@
       "id": 1
     },
     {
-      "firstName": "Test2",
-      "lastName": "Test2",
-      "email": "test@gmail.com",
-      "phone": 555555555,
-      "weight": 70,
-      "height": 1.73,
-      "bmi": 23.38868655818771,
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "email": "kowalski@gmail.com",
+      "phone": 455333211,
+      "weight": 82,
+      "height": 1.78,
+      "bmi": 25.88057063502083,
+      "bmiResult": "Overweight",
+      "gender": "Male",
+      "requireTrainer": "Yes",
+      "package": "Annual",
+      "important": [
+        "Sugar Craving Body",
+        "Fitness"
+      ],
+      "haveGymBefore": "No",
+      "enquiryDate": "2023-02-25T23:00:00.000Z",
+      "id": 2
+    },
+    {
+      "firstName": "Adam",
+      "lastName": "Nowak",
+      "email": "nowak@gmail.com",
+      "phone": 789654273,
+      "weight": 75,
+      "height": 1.83,
+      "bmi": 22.395413419331717,
       "bmiResult": "Normal",
-      "gender": "Female",
+      "gender": "Male",
       "requireTrainer": "Yes",
       "package": "Quarterly",
       "important": [
-        "Building Lean Muscle",
-        "Sugar Craving Body"
+        "Energy and Endurance",
+        "Building Lean Muscle"
       ],
       "haveGymBefore": "Yes",
-      "enquiryDate": "2023-03-14T23:00:00.000Z",
-      "id": 2
+      "enquiryDate": "2023-03-31T22:00:00.000Z",
+      "id": 3
     }
   ]
 }
