@@ -3,7 +3,7 @@ export class User {
   lastName: string;
   email: string;
   phone: number;
-  weights: number;
+  weight: number;
   height: number;
   bmi: number;
   bmiResult: number;

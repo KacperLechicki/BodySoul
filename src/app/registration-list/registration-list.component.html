@@ -65,8 +65,10 @@
       <ng-container matColumnDef="action">
         <th class="action-cell-header" mat-header-cell *matHeaderCellDef mat-sort-header> </th>
         <td class="action-cell" mat-cell *matCellDef="let row">
-          <button mat-icon-button color="accent" class="view"><i class="fa fa-eye" aria-hidden="true"></i></button>
-          <button mat-icon-button color="primary" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button [routerLink]="['/detail', row.id]" routerLinkActive="router-link-active" mat-icon-button
+            color="accent" class="view"><i class="fa fa-eye" aria-hidden="true"></i></button>
+          <button (click)="edit(row.id)" mat-icon-button color="primary" class="edit"><i class="fa fa-pencil"
+              aria-hidden="true"></i></button>
           <button mat-icon-button color="warn" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
         </td>
       </ng-container>

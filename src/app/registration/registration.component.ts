@@ -7,8 +7,10 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { Subscription } from 'rxjs';
+import { User } from '../models/user.model';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -38,13 +40,16 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   heightChangesSub: Subscription;
   weightChangesSub: Subscription;
   postSub: Subscription;
+  updateUserSub: Subscription;
 
   public registerForm: FormGroup;
+  public userIDUpdate: number;
 
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
-    private toastService: NgToastService
+    private toastService: NgToastService,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -87,6 +92,13 @@ export class RegistrationComponent implements OnInit, OnDestroy {
         this.registerForm.controls['bmiResult'].patchValue('');
       }
       console.log(this.registerForm.controls['weight'].value);
+    });
+
+    this.updateUserSub = this.activatedRoute.params.subscribe((res) => {
+      this.userIDUpdate = res['id'];
+      this.api.getRegisteredUserId(this.userIDUpdate).subscribe((res) => {
+        this.fillFormToUpdate(res);
+      });
     });
   }
 
@@ -171,10 +183,30 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     }
   }
 
+  fillFormToUpdate(value: User) {
+    this.registerForm.setValue({
+      firstName: value.firstName,
+      lastName: value.lastName,
+      email: value.email,
+      phone: value.phone,
+      weight: value.weight,
+      height: value.height,
+      bmi: value.bmi,
+      bmiResult: value.bmiResult,
+      gender: value.gender,
+      requireTrainer: value.requireTrainer,
+      package: value.package,
+      important: value.important,
+      haveGymBefore: value.haveGymBefore,
+      enquiryDate: value.enquiryDate,
+    });
+  }
+
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
     this.heightChangesSub.unsubscribe();
     this.weightChangesSub.unsubscribe();
+    this.updateUserSub.unsubscribe();
   }
 }
