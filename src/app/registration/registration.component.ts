@@ -7,6 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatRadioButton } from '@angular/material/radio';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { Subscription } from 'rxjs';
@@ -34,6 +35,10 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   @ViewChild('choiceTrainer') choiceTrainer: ElementRef<HTMLDivElement>;
   @ViewChild('choiceGender') choiceGender: ElementRef<HTMLDivElement>;
   @ViewChild('choiceGym') choiceGym: ElementRef<HTMLDivElement>;
+
+  public trainerRadio: string;
+  public genderRadio: string;
+  public gymRadio: string;
 
   heightPlaceholder: string = 'Enter your weight first!';
 
@@ -160,6 +165,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     if (this.registerForm.controls['gender'].value !== '') {
       this.choiceGender.nativeElement.style.border =
         '1px solid rgba(0, 0, 0, 0.38)';
+      this.genderRadio = this.registerForm.controls['gender'].value;
     }
   }
 
@@ -167,6 +173,8 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     if (this.registerForm.controls['requireTrainer'].value !== '') {
       this.choiceTrainer.nativeElement.style.border =
         '1px solid rgba(0, 0, 0, 0.38)';
+      this.trainerRadio = this.registerForm.controls['requireTrainer'].value;
+      console.log(this.trainerRadio);
     }
   }
 
@@ -174,6 +182,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     if (this.registerForm.controls['haveGymBefore'].value !== '') {
       this.choiceGym.nativeElement.style.border =
         '1px solid rgba(0, 0, 0, 0.38)';
+      this.gymRadio = this.registerForm.controls['haveGymBefore'].value;
     }
   }
 

@@ -85,7 +85,7 @@
                 {{trainerOptions}}
               </mat-radio-button>
             </mat-radio-group>
-            <p>Selected option is:</p>
+            <p>Selected option is: {{trainerRadio}}</p>
           </div>
           <mat-icon matSuffix>accessibility</mat-icon>
         </div>
@@ -100,7 +100,7 @@
                 {{gender}}
               </mat-radio-button>
             </mat-radio-group>
-            <p>Selected option is:</p>
+            <p>Selected option is: {{genderRadio}}</p>
           </div>
           <mat-icon matSuffix>people
           </mat-icon>
@@ -141,7 +141,7 @@
                 {{gymOptions}}
               </mat-radio-button>
             </mat-radio-group>
-            <p>Selected option is: </p>
+            <p>Selected option is: {{gymRadio}}</p>
           </div>
           <mat-icon matSuffix>accessibility
           </mat-icon>
@@ -159,8 +159,8 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <button class="cancel-button" [routerLink]="['/list']" routerLinkActive="router-link-active" *ngIf="isUpdateActive" mat-flat-button
-          type="button" color="warn">Cancel</button>
+        <button class="cancel-button" [routerLink]="['/list']" routerLinkActive="router-link-active"
+          *ngIf="isUpdateActive" mat-flat-button type="button" color="warn">Cancel</button>
         <button *ngIf="!isUpdateActive" mat-flat-button type="button" color="accent"
           (click)="onSubmit()">Submit</button>
         <button *ngIf="isUpdateActive" mat-flat-button type="button" color="accent" (click)="onUpdate()">Update</button>

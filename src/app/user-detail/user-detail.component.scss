@@ -20,6 +20,13 @@
     max-height: 600px;
     overflow: auto;
 
+    mat-card-header {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      z-index: 10;
+    }
+
     .card-title {
       color: black;
     }
