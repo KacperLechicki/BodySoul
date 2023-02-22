@@ -5,6 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { User } from '../models/user.model';
 import { ApiService } from '../services/api.service';
 import { Router } from '@angular/router';
+import { NgConfirmService } from 'ng-confirm-box';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-registration-list',
@@ -31,7 +33,12 @@ export class RegistrationListComponent {
     'action',
   ];
 
-  constructor(private api: ApiService, private router: Router) {}
+  constructor(
+    private api: ApiService,
+    private router: Router,
+    private confirm: NgConfirmService,
+    private toastService: NgToastService
+  ) {}
 
   ngAfterViewInit(): void {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
@@ -60,5 +67,22 @@ export class RegistrationListComponent {
 
   edit(id: number): void {
     this.router.navigate(['/update', id]);
+  }
+
+  delete(id: number): void {
+    this.confirm.showConfirm(
+      'Are you sure?',
+      () => {
+        this.api.deleteRegisteredUser(id).subscribe((res) => {
+          this.toastService.success({
+            detail: 'Success',
+            summary: 'Deleted successfully',
+            duration: 3000,
+          });
+          this.getUsers();
+        });
+      },
+      () => {}
+    );
   }
 }

@@ -89,3 +89,20 @@ svg {
 .mat-mdc-paginator .mat-mdc-select-value {
   color: black !important;
 }
+
+ng-confirm {
+  .modal1.active {
+    height: 200px;
+    max-height: 300px;
+    padding: 0 16px;
+    background-color: #9fa8da;
+
+    .dialog-content {
+      font-size: 1.4rem;
+    }
+
+    button {
+      transition: box-shadow 0.3s;
+    }
+  }
+}

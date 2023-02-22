@@ -94,7 +94,6 @@ export class RegistrationComponent implements OnInit, OnDestroy {
         this.heightPlaceholder = 'Enter your weight first!';
         this.registerForm.controls['bmiResult'].patchValue('');
       }
-      console.log(this.registerForm.controls['weight'].value);
     });
 
     this.updateUserSub = this.activatedRoute.params.subscribe((res) => {
