@@ -1,15 +1,14 @@
+<button class="back-button" [routerLink]="['/list']" routerLinkActive="router-link-active" mat-flat-button color="accent"><i
+  class="fa fa-arrow-left" aria-hidden="true"></i>Clients List</button>
+
 <mat-card *ngIf="userDetail" class="example-card">
   <mat-card-header>
-    <mat-card-title>{{userDetail.firstName}} {{userDetail.lastName}}</mat-card-title>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title class="card-title">{{userDetail.firstName}} {{userDetail.lastName}}</mat-card-title>
+    <mat-card-subtitle>{{userDetail.email}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <mat-list>
-      <mat-list-item>
-        <div matLine>
-          Email:
-          <button mat-button>{{userDetail.email}}</button>
-        </div>
-      </mat-list-item>
       <mat-list-item>
         <div matLine>
           Phone:
@@ -53,13 +52,9 @@
         </div>
       </mat-list-item>
       <mat-list-item>
-        <div matLine>
+        <div matLine class="goal-container">
           Goals:
-          <button mat-button><mat-chip-listbox>
-              <ng-container *ngFor="let row of userDetail.important">
-                <mat-chip-option selected>{{row}}</mat-chip-option>
-              </ng-container>
-            </mat-chip-listbox></button>
+          <button mat-button matListItemLine *ngFor="let goal of userDetail.important">{{goal}}</button>
         </div>
       </mat-list-item>
       <mat-list-item>

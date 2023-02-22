@@ -42,23 +42,27 @@
       "id": 2
     },
     {
-      "firstName": "Adam",
-      "lastName": "Nowak",
-      "email": "nowak@gmail.com",
-      "phone": 789654273,
-      "weight": 75,
-      "height": 1.83,
-      "bmi": 22.395413419331717,
+      "firstName": "Test",
+      "lastName": "Test",
+      "email": "test@gmail.com",
+      "phone": 333444555,
+      "weight": 65,
+      "height": 1.67,
+      "bmi": 23.306680053067517,
       "bmiResult": "Normal",
-      "gender": "Male",
-      "requireTrainer": "Yes",
-      "package": "Quarterly",
+      "gender": "Female",
+      "requireTrainer": "No",
+      "package": "Monthly",
       "important": [
+        "Toxic Fat Reduction",
         "Energy and Endurance",
-        "Building Lean Muscle"
+        "Building Lean Muscle",
+        "Healthier Digestive System",
+        "Sugar Craving Body",
+        "Fitness"
       ],
-      "haveGymBefore": "Yes",
-      "enquiryDate": "2023-03-31T22:00:00.000Z",
+      "haveGymBefore": "No",
+      "enquiryDate": "2023-02-28T23:00:00.000Z",
       "id": 3
     }
   ]

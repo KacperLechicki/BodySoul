@@ -1,11 +1,49 @@
 :host {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .back-button {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+
+    i {
+      margin-right: 5px;
+    }
+  }
 
   .example-card {
     display: block;
     margin: 0 auto;
     min-width: 400px;
-    max-width: 80vw;
+    max-width: 800px;
+    max-height: 600px;
+    overflow: auto;
+
+    .card-title {
+      color: black;
+    }
+
+    .example-header-image {
+      background-image: url("https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331256_960_720.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    button {
+      margin-bottom: 2px;
+    }
+
+    .goal-container {
+      padding-bottom: 20px;
+      font-size: 1.6rem;
+      color: black;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 }
