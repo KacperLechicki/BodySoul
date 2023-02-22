@@ -8,15 +8,19 @@ mat-toolbar {
     display: flex;
     align-items: center;
 
-    img {
-      margin-right: 10px;
-      max-height: 30px;
-      border-radius: 5px;
-    }
+    .logoRouter {
+      cursor: pointer;
 
-    &__name {
-      font-size: 1.8rem;
-      pointer-events: none;
+      img {
+        margin-right: 10px;
+        max-height: 30px;
+        border-radius: 5px;
+      }
+
+      .name {
+        font-size: 1.8rem;
+        pointer-events: none;
+      }
     }
 
     .example-spacer {

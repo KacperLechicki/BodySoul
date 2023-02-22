@@ -53,7 +53,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
       weight: ['', Validators.required],
       height: ['', Validators.required],
@@ -176,6 +176,5 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     //Add 'implements OnDestroy' to the class.
     this.heightChangesSub.unsubscribe();
     this.weightChangesSub.unsubscribe();
-    this.postSub.unsubscribe();
   }
 }

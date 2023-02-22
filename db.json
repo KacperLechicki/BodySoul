@@ -1,3 +1,45 @@
 {
-  "enquiry": []
+  "enquiry": [
+    {
+      "firstName": "Kacper",
+      "lastName": "Lechicki",
+      "email": "gmail@gmail.com",
+      "phone": 555555555,
+      "weight": 70,
+      "height": 1.73,
+      "bmi": 23.38868655818771,
+      "bmiResult": "Normal",
+      "gender": "Male",
+      "requireTrainer": "No",
+      "package": "Monthly",
+      "important": [
+        "Energy and Endurance",
+        "Building Lean Muscle",
+        "Fitness"
+      ],
+      "haveGymBefore": "Yes",
+      "enquiryDate": "2023-02-28T23:00:00.000Z",
+      "id": 1
+    },
+    {
+      "firstName": "Test",
+      "lastName": "Test",
+      "email": "test@gmail.com",
+      "phone": 555555555,
+      "weight": 70,
+      "height": 1.73,
+      "bmi": 23.38868655818771,
+      "bmiResult": "Normal",
+      "gender": "Female",
+      "requireTrainer": "Yes",
+      "package": "Quarterly",
+      "important": [
+        "Building Lean Muscle",
+        "Sugar Craving Body"
+      ],
+      "haveGymBefore": "Yes",
+      "enquiryDate": "2023-03-14T23:00:00.000Z",
+      "id": 2
+    }
+  ]
 }
